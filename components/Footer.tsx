@@ -40,7 +40,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
-              WebAgency
+              Wahaweb
             </h3>
             <p className="text-gray-400 mb-6 max-w-md">
               Votre partenaire digital pour transformer vos idées en solutions
@@ -118,11 +118,11 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
-            © {currentYear} WebAgency. Tous droits réservés.
+            © {currentYear} Wahaweb. Tous droits réservés.
           </p>
           <p className="text-gray-400 text-sm flex items-center gap-2">
             Fait avec <Heart className="w-4 h-4 text-red-500 fill-red-500" /> par
-            WebAgency
+            Wahaweb
           </p>
         </div>
       </div>
