@@ -21,8 +21,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    value: 'contact@webagency.com',
-    link: 'mailto:contact@webagency.com',
+    value: 'contact@wahaweb.yt',
+    link: 'mailto:contact@wahaweb.yt',
   },
   {
     icon: Phone,

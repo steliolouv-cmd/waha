@@ -40,7 +40,7 @@ export default function Header() {
             transition={{ delay: 0.2 }}
             className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
           >
-            WebAgency
+            Wahaweb
           </motion.div>
 
           {/* Desktop Navigation */}
