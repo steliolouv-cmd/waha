@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Thème sombre - Gris foncé et Or */
+  --background: #0f0f0f;
+  --background-secondary: #1a1a1a;
+  --background-tertiary: #252525;
+  --foreground: #e8e8e8;
+  --foreground-secondary: #b8b8b8;
+  
+  /* Palette Or avec reflets */
+  --gold-primary: #D4AF37;
+  --gold-light: #FFD700;
+  --gold-dark: #B8941F;
+  --gold-shine: #F4E4A6;
+  
+  /* Gris avec nuances */
+  --gray-darker: #0a0a0a;
+  --gray-dark: #1a1a1a;
+  --gray-medium: #2a2a2a;
+  --gray-light: #3a3a3a;
+  --gray-lighter: #4a4a4a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-gold-primary: var(--gold-primary);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-gold-shine: var(--gold-shine);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+/* Effet de grain subtil pour donner de la texture */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Classes utilitaires pour les effets d'or avec reflets */
+.gold-shine {
+  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 50%, var(--gold-shine) 100%);
+  background-size: 200% 200%;
+  animation: goldShine 3s ease infinite;
+}
+
+@keyframes goldShine {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.gold-glow {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3),
+              0 0 40px rgba(212, 175, 55, 0.2),
+              0 0 60px rgba(212, 175, 55, 0.1);
+}
+
+.gold-text-glow {
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5),
+               0 0 20px rgba(212, 175, 55, 0.3),
+               0 0 30px rgba(212, 175, 55, 0.2);
 }

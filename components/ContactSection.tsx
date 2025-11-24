@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin, Send } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -21,19 +21,13 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    value: 'contact@webagency.com',
-    link: 'mailto:contact@webagency.com',
-  },
-  {
-    icon: Phone,
-    title: 'Téléphone',
-    value: '+33 1 23 45 67 89',
-    link: 'tel:+33123456789',
+    value: 'contact@wahaweb.yt',
+    link: 'mailto:contact@wahaweb.yt',
   },
   {
     icon: MapPin,
     title: 'Adresse',
-    value: 'Paris, France',
+    value: 'Mayotte - Paris',
     link: null,
   },
 ];
@@ -69,7 +63,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+    <section id="contact" className="py-20 bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-[#252525]">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -78,10 +72,10 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+            className="text-4xl md:text-5xl font-bold text-gray-200 mb-4"
           >
             Contactez{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#D4AF37] via-[#FFD700] to-[#D4AF37] bg-clip-text text-transparent gold-text-glow">
               nous
             </span>
           </motion.h2>
@@ -90,7 +84,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-gray-600"
+            className="text-xl text-gray-400"
           >
             Discutons de votre projet et donnons vie à vos idées
           </motion.p>
@@ -106,10 +100,10 @@ export default function ContactSection() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl font-bold text-gray-200 mb-4">
                 Parlons de votre projet
               </h3>
-              <p className="text-gray-600 leading-relaxed mb-8">
+              <p className="text-gray-400 leading-relaxed mb-8">
                 Que vous ayez un projet précis ou simplement une idée, nous sommes
                 là pour vous écouter et vous conseiller. Prenez contact avec nous
                 dès aujourd&apos;hui !
@@ -126,20 +120,20 @@ export default function ContactSection() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="flex items-center gap-4 group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <info.icon className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#B8941F] to-[#D4AF37] flex items-center justify-center group-hover:scale-110 transition-transform gold-glow">
+                    <info.icon className="w-6 h-6 text-[#0f0f0f]" />
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">{info.title}</p>
                     {info.link ? (
                       <a
                         href={info.link}
-                        className="text-gray-900 font-semibold hover:text-blue-600 transition-colors"
+                        className="text-gray-200 font-semibold hover:text-[#D4AF37] transition-colors"
                       >
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-gray-900 font-semibold">{info.value}</p>
+                      <p className="text-gray-200 font-semibold">{info.value}</p>
                     )}
                   </div>
                 </motion.div>
@@ -153,19 +147,19 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white p-8 rounded-2xl shadow-xl"
+            className="bg-[#1a1a1a] p-8 rounded-2xl shadow-xl shadow-[#D4AF37]/10 border border-[#3a3a3a]"
           >
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               {/* Name */}
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-semibold text-gray-300 mb-2">
                   Nom complet *
                 </label>
                 <input
                   {...register('name')}
                   type="text"
                   id="name"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 bg-[#252525] border border-[#3a3a3a] text-gray-200 rounded-lg focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition-all placeholder:text-gray-500"
                   placeholder="Jean Dupont"
                 />
                 {errors.name && (
@@ -175,14 +169,14 @@ export default function ContactSection() {
 
               {/* Email */}
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-semibold text-gray-300 mb-2">
                   Email *
                 </label>
                 <input
                   {...register('email')}
                   type="email"
                   id="email"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 bg-[#252525] border border-[#3a3a3a] text-gray-200 rounded-lg focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition-all placeholder:text-gray-500"
                   placeholder="jean@exemple.com"
                 />
                 {errors.email && (
@@ -192,28 +186,28 @@ export default function ContactSection() {
 
               {/* Phone */}
               <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="phone" className="block text-sm font-semibold text-gray-300 mb-2">
                   Téléphone
                 </label>
                 <input
                   {...register('phone')}
                   type="tel"
                   id="phone"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 bg-[#252525] border border-[#3a3a3a] text-gray-200 rounded-lg focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition-all placeholder:text-gray-500"
                   placeholder="+33 1 23 45 67 89"
                 />
               </div>
 
               {/* Subject */}
               <div>
-                <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="subject" className="block text-sm font-semibold text-gray-300 mb-2">
                   Sujet *
                 </label>
                 <input
                   {...register('subject')}
                   type="text"
                   id="subject"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-3 bg-[#252525] border border-[#3a3a3a] text-gray-200 rounded-lg focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition-all placeholder:text-gray-500"
                   placeholder="Développement d'un site web"
                 />
                 {errors.subject && (
@@ -223,14 +217,14 @@ export default function ContactSection() {
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-semibold text-gray-300 mb-2">
                   Message *
                 </label>
                 <textarea
                   {...register('message')}
                   id="message"
                   rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
+                  className="w-full px-4 py-3 bg-[#252525] border border-[#3a3a3a] text-gray-200 rounded-lg focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition-all resize-none placeholder:text-gray-500"
                   placeholder="Décrivez votre projet..."
                 />
                 {errors.message && (
@@ -242,7 +236,7 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-gradient-to-r from-[#B8941F] via-[#D4AF37] to-[#FFD700] text-[#0f0f0f] px-8 py-4 rounded-lg font-semibold hover:shadow-xl hover:shadow-[#D4AF37]/50 transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed gold-glow"
               >
                 {isSubmitting ? (
                   <>
