@@ -28,7 +28,7 @@ export default function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#1a1a1a]/95 backdrop-blur-sm shadow-lg shadow-[#D4AF37]/10' : 'bg-transparent'
+        isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg shadow-gray-200' : 'bg-transparent'
       }`}
     >
       <nav className="container mx-auto px-6 py-4 relative">
@@ -38,7 +38,7 @@ export default function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="absolute left-6 text-2xl font-bold bg-gradient-to-r from-[#D4AF37] via-[#FFD700] to-[#D4AF37] bg-clip-text text-transparent gold-text-glow"
+            className="absolute left-6 text-2xl font-bold bg-gradient-to-r from-[#e55a2b] via-[#ff6b35] to-[#ff8c5a] bg-clip-text text-transparent orange-text-glow"
           >
             Wahaweb
           </motion.div>
@@ -47,19 +47,19 @@ export default function Header() {
           <div className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection('accueil')}
-              className="text-gray-300 hover:text-[#D4AF37] transition-all hover:gold-text-glow font-bold"
+              className="text-gray-700 hover:text-[#ff6b35] transition-all hover:orange-text-glow font-bold"
             >
               Accueil
             </button>
             <button
               onClick={() => scrollToSection('services')}
-              className="text-gray-300 hover:text-[#D4AF37] transition-all hover:gold-text-glow font-bold"
+              className="text-gray-700 hover:text-[#ff6b35] transition-all hover:orange-text-glow font-bold"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-gray-300 hover:text-[#D4AF37] transition-all hover:gold-text-glow font-bold"
+              className="text-gray-700 hover:text-[#ff6b35] transition-all hover:orange-text-glow font-bold"
             >
               Contact
             </button>
@@ -68,7 +68,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden absolute right-6 text-gray-300 hover:text-[#D4AF37] transition-colors"
+            className="md:hidden absolute right-6 text-gray-700 hover:text-[#ff6b35] transition-colors"
           >
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -79,29 +79,29 @@ export default function Header() {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="md:hidden mt-4 pb-4 space-y-4 bg-[#1a1a1a]/90 backdrop-blur-sm rounded-lg p-4"
+            className="md:hidden mt-4 pb-4 space-y-4 bg-white/95 backdrop-blur-sm p-4 shadow-lg border border-gray-200"
           >
             <button
               onClick={() => scrollToSection('accueil')}
-              className="block w-full text-left text-gray-300 hover:text-[#D4AF37] transition-colors py-2"
+              className="block w-full text-left text-gray-700 hover:text-[#ff6b35] transition-colors py-2"
             >
               Accueil
             </button>
             <button
               onClick={() => scrollToSection('services')}
-              className="block w-full text-left text-gray-300 hover:text-[#D4AF37] transition-colors py-2"
+              className="block w-full text-left text-gray-700 hover:text-[#ff6b35] transition-colors py-2"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="block w-full text-left text-gray-300 hover:text-[#D4AF37] transition-colors py-2"
+              className="block w-full text-left text-gray-700 hover:text-[#ff6b35] transition-colors py-2"
             >
               Contact
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="w-full bg-gradient-to-r from-[#B8941F] via-[#D4AF37] to-[#FFD700] text-[#0f0f0f] px-6 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-[#D4AF37]/50 transition-all"
+              className="w-full bg-gradient-to-r from-[#e55a2b] via-[#ff6b35] to-[#ff8c5a] text-white px-6 py-3 font-semibold hover:shadow-lg hover:shadow-[#ff6b35]/50 transition-all orange-glow"
             >
               Démarrer un projet
             </button>

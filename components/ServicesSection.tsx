@@ -67,7 +67,14 @@ export default function ServicesSection() {
   const [selectedService, setSelectedService] = useState<number | null>(null);
 
   return (
-    <section id="services" className="py-20 bg-[#0f0f0f]">
+    <section 
+      id="services" 
+      className="py-20"
+      style={{
+        backgroundImage: 'linear-gradient(to bottom right, #f8f9fa, white, #e9ecef)',
+        backgroundAttachment: 'fixed',
+      }}
+    >
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -76,10 +83,10 @@ export default function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-bold text-gray-200 mb-4"
+            className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
           >
             Nos{' '}
-            <span className="bg-gradient-to-r from-[#D4AF37] via-[#FFD700] to-[#D4AF37] bg-clip-text text-transparent gold-text-glow">
+            <span className="bg-gradient-to-r from-[#e55a2b] via-[#ff6b35] to-[#ff8c5a] bg-clip-text text-transparent orange-text-glow">
               Services
             </span>
           </motion.h2>
@@ -88,7 +95,7 @@ export default function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-gray-400"
+            className="text-xl text-gray-600"
           >
             Des solutions digitales complètes pour faire grandir votre entreprise
           </motion.p>
@@ -105,7 +112,7 @@ export default function ServicesSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
               onClick={() => setSelectedService(index)}
-              className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-2xl border border-[#3a3a3a] hover:border-[#D4AF37] hover:shadow-xl hover:shadow-[#D4AF37]/20 transition-all group overflow-hidden cursor-pointer"
+              className="bg-white border border-gray-200 hover:border-[#ff6b35] hover:shadow-xl hover:shadow-[#ff6b35]/15 transition-all group overflow-hidden cursor-pointer"
             >
               {/* Image Thumbnail */}
               <div className="relative h-48 overflow-hidden">
@@ -114,31 +121,31 @@ export default function ServicesSection() {
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/50 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
                 {/* Icon */}
                 <div className="absolute bottom-4 left-4 w-14 h-14">
                   {/* Background gris argent */}
                   <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#b4baca] to-[#848994] opacity-30 group-hover:opacity-0 transition-all duration-300" />
                   {/* Background or au hover */}
-                  <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:gold-glow`} />
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-[#e55a2b] to-[#ff6b35] opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:orange-glow" />
                   {/* Icon */}
                   <div className="relative w-full h-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <service.icon className="w-7 h-7 text-[#0f0f0f]" />
+                    <service.icon className="w-7 h-7 text-white" />
                   </div>
                 </div>
               </div>
               
               {/* Content */}
               <div className="p-8">
-                <h3 className="text-2xl font-bold text-gray-200 mb-3">
+                <h3 className="text-2xl font-bold text-gray-800 mb-3">
                   {service.title}
                 </h3>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed">
                   {service.description}
                 </p>
 
                 {/* Learn More Link */}
-                <button className="mt-6 text-[#D4AF37] font-semibold flex items-center gap-2 group-hover:gap-3 transition-all hover:text-[#FFD700]">
+                <button className="mt-6 text-[#ff6b35] font-semibold flex items-center gap-2 group-hover:gap-3 transition-all hover:text-[#e55a2b]">
                   En savoir plus
                   <span className="text-xl">→</span>
                 </button>
@@ -155,7 +162,7 @@ export default function ServicesSection() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <p className="text-gray-400 mb-6">
+          <p className="text-gray-600 mb-6">
             Vous ne trouvez pas ce que vous cherchez ?
           </p>
           <button
@@ -163,7 +170,7 @@ export default function ServicesSection() {
               const element = document.getElementById('contact');
               element?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="bg-gradient-to-r from-[#B8941F] via-[#D4AF37] to-[#FFD700] text-[#0f0f0f] px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-[#D4AF37]/50 transition-all gold-glow hover:scale-105"
+            className="bg-gradient-to-r from-[#e55a2b] via-[#ff6b35] to-[#ff8c5a] text-white px-8 py-4 font-semibold hover:shadow-xl hover:shadow-[#ff6b35]/50 transition-all orange-glow hover:scale-105"
           >
             Contactez-nous pour un projet sur mesure
           </button>
@@ -186,58 +193,58 @@ export default function ServicesSection() {
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: 'spring', duration: 0.5 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-gradient-to-br from-[#1a1a1a] to-[#252525] rounded-2xl border border-[#D4AF37] max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              className="bg-white border-2 border-[#ff6b35] max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
             >
               {/* Header with close button */}
               <div className="relative">
                 <img
                   src={services[selectedService].image}
                   alt={services[selectedService].title}
-                  className="w-full h-64 object-cover rounded-t-2xl"
+                  className="w-full h-64 object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 <button
                   onClick={() => setSelectedService(null)}
-                  className="absolute top-4 right-4 w-10 h-10 bg-[#1a1a1a]/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-[#D4AF37] transition-colors"
+                  className="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-[#ff6b35] hover:text-white transition-colors"
                 >
-                  <X className="w-6 h-6 text-gray-300" />
+                  <X className="w-6 h-6" />
                 </button>
                 {/* Icon */}
-                <div className={`absolute bottom-4 left-6 w-16 h-16 rounded-xl bg-gradient-to-br ${services[selectedService].color} flex items-center justify-center gold-glow`}>
+                <div className="absolute bottom-4 left-6 w-16 h-16 rounded-xl bg-gradient-to-br from-[#e55a2b] to-[#ff6b35] flex items-center justify-center orange-glow">
                   {(() => {
                     const Icon = services[selectedService].icon;
-                    return <Icon className="w-8 h-8 text-[#0f0f0f]" />;
+                    return <Icon className="w-8 h-8 text-white" />;
                   })()}
                 </div>
               </div>
 
               {/* Content */}
               <div className="p-8">
-                <h2 className="text-3xl font-bold text-gray-200 mb-4">
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">
                   {services[selectedService].title}
                 </h2>
-                <p className="text-xl text-gray-400 mb-6">
+                <p className="text-xl text-gray-600 mb-6">
                   {services[selectedService].description}
                 </p>
                 
                 {/* Additional details */}
                 <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-[#D4AF37]">Ce que nous offrons :</h3>
-                  <ul className="space-y-3 text-gray-300">
+                  <h3 className="text-xl font-semibold text-[#ff6b35]">Ce que nous offrons :</h3>
+                  <ul className="space-y-3 text-gray-700">
                     <li className="flex items-start gap-3">
-                      <span className="text-[#D4AF37] mt-1">✓</span>
+                      <span className="text-[#ff6b35] mt-1">✓</span>
                       <span>Solutions sur mesure adaptées à vos besoins spécifiques</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[#D4AF37] mt-1">✓</span>
+                      <span className="text-[#ff6b35] mt-1">✓</span>
                       <span>Technologies modernes et performantes</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[#D4AF37] mt-1">✓</span>
+                      <span className="text-[#ff6b35] mt-1">✓</span>
                       <span>Support et maintenance continus</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-[#D4AF37] mt-1">✓</span>
+                      <span className="text-[#ff6b35] mt-1">✓</span>
                       <span>Livraison dans les délais convenus</span>
                     </li>
                   </ul>
@@ -250,7 +257,7 @@ export default function ServicesSection() {
                     const element = document.getElementById('contact');
                     element?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="w-full mt-8 bg-gradient-to-r from-[#B8941F] via-[#D4AF37] to-[#FFD700] text-[#0f0f0f] px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-[#D4AF37]/50 transition-all gold-glow hover:scale-105"
+                  className="w-full mt-8 bg-gradient-to-r from-[#e55a2b] via-[#ff6b35] to-[#ff8c5a] text-white px-8 py-4 font-semibold hover:shadow-xl hover:shadow-[#ff6b35]/50 transition-all orange-glow hover:scale-105"
                 >
                   Demander un devis
                 </button>

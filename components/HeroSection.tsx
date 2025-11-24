@@ -128,18 +128,18 @@ export default function HeroSection() {
       {/* Navigation Buttons */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-[#252525]/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:shadow-[#D4AF37]/30 hover:bg-[#2a2a2a] transition-all group border border-[#3a3a3a]"
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:shadow-[#ff6b35]/30 hover:bg-gray-50 transition-all group border border-gray-200"
         aria-label="Slide précédent"
       >
-        <ChevronLeft className="w-6 h-6 text-gray-300 group-hover:text-[#D4AF37] transition-colors" />
+        <ChevronLeft className="w-6 h-6 text-gray-700 group-hover:text-[#ff6b35] transition-colors" />
       </button>
       
       <button
         onClick={nextSlide}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-[#252525]/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:shadow-[#D4AF37]/30 hover:bg-[#2a2a2a] transition-all group border border-[#3a3a3a]"
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 bg-white/80 backdrop-blur-sm p-3 rounded-full shadow-lg hover:shadow-[#ff6b35]/30 hover:bg-gray-50 transition-all group border border-gray-200"
         aria-label="Slide suivant"
       >
-        <ChevronRight className="w-6 h-6 text-gray-300 group-hover:text-[#D4AF37] transition-colors" />
+        <ChevronRight className="w-6 h-6 text-gray-700 group-hover:text-[#ff6b35] transition-colors" />
       </button>
 
       <div className="container mx-auto px-6 py-20 relative z-10">
@@ -162,10 +162,10 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-200 max-w-5xl"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-800 max-w-5xl"
             >
               {currentSlideData.accroche}{' '}
-              <span className={`bg-gradient-to-r ${currentSlideData.gradient} bg-clip-text text-transparent gold-text-glow`}>
+              <span className="bg-gradient-to-r from-[#e55a2b] via-[#ff6b35] to-[#ff8c5a] bg-clip-text text-transparent orange-text-glow">
                 {currentSlideData.highlight}
               </span>
             </motion.h1>
@@ -175,7 +175,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-lg md:text-xl lg:text-2xl text-gray-400 max-w-3xl leading-relaxed"
+              className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-3xl leading-relaxed"
             >
               {currentSlideData.sousTexte}
             </motion.p>
@@ -189,14 +189,14 @@ export default function HeroSection() {
             >
               <button
                 onClick={() => scrollToSection('contact')}
-                className={`group bg-gradient-to-r ${currentSlideData.gradient} text-[#0f0f0f] px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:shadow-[#D4AF37]/50 transition-all flex items-center gap-2 justify-center gold-glow hover:scale-105`}
+                className="group bg-gradient-to-r from-[#e55a2b] via-[#ff6b35] to-[#ff8c5a] text-white px-8 py-4 font-semibold hover:shadow-2xl hover:shadow-[#ff6b35]/50 transition-all flex items-center gap-2 justify-center orange-glow hover:scale-105"
               >
                 Démarrer votre projet
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               <button
                 onClick={() => scrollToSection('services')}
-                className="bg-[#252525] text-gray-200 px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:shadow-[#D4AF37]/30 transition-all border border-[#3a3a3a] hover:border-[#D4AF37] hover:text-[#D4AF37]"
+                className="bg-white text-gray-700 px-8 py-4 font-semibold hover:shadow-lg hover:shadow-[#ff6b35]/30 transition-all border border-gray-300 hover:border-[#ff6b35] hover:text-[#ff6b35]"
               >
                 Découvrir nos services
               </button>

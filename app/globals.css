@@ -1,34 +1,43 @@
 @import "tailwindcss";
 
 :root {
-  /* Thème sombre - Gris foncé et Or */
-  --background: #0f0f0f;
-  --background-secondary: #1a1a1a;
-  --background-tertiary: #252525;
-  --foreground: #e8e8e8;
-  --foreground-secondary: #b8b8b8;
+  /* Thème clair et aéré - Gris pâle */
+  --background: #f8f9fa;
+  --background-secondary: #ffffff;
+  --background-tertiary: #e9ecef;
+  --foreground: #2c3e50;
+  --foreground-secondary: #6c757d;
   
-  /* Palette Or avec reflets */
-  --gold-primary: #D4AF37;
-  --gold-light: #FFD700;
-  --gold-dark: #B8941F;
-  --gold-shine: #F4E4A6;
+  /* Palette Gris pâle avec accents subtils */
+  --gray-50: #f8f9fa;
+  --gray-100: #e9ecef;
+  --gray-200: #dee2e6;
+  --gray-300: #ced4da;
+  --gray-400: #adb5bd;
+  --gray-500: #6c757d;
+  --gray-600: #495057;
+  --gray-700: #343a40;
+  --gray-800: #212529;
   
-  /* Gris avec nuances */
-  --gray-darker: #0a0a0a;
-  --gray-dark: #1a1a1a;
-  --gray-medium: #2a2a2a;
-  --gray-light: #3a3a3a;
-  --gray-lighter: #4a4a4a;
+  /* Accents de couleur subtils */
+  --accent-primary: #5a67d8;
+  --accent-light: #7c8aed;
+  --accent-dark: #4c51bf;
+  --accent-subtle: #e0e7ff;
+  
+  /* Couleur secondaire - Orange pétant */
+  --orange-primary: #ff6b35;
+  --orange-light: #ff8c5a;
+  --orange-dark: #e55a2b;
+  --orange-subtle: #fff5f2;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-gold-primary: var(--gold-primary);
-  --color-gold-light: var(--gold-light);
-  --color-gold-dark: var(--gold-dark);
-  --color-gold-shine: var(--gold-shine);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-light: var(--accent-light);
+  --color-accent-dark: var(--accent-dark);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -36,11 +45,10 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
   position: relative;
 }
 
-/* Effet de grain subtil pour donner de la texture */
+/* Effet de grain subtil et lumineux pour thème clair */
 body::before {
   content: '';
   position: fixed;
@@ -49,20 +57,20 @@ body::before {
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.02) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(90, 103, 216, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(90, 103, 216, 0.01) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
 }
 
-/* Classes utilitaires pour les effets d'or avec reflets */
-.gold-shine {
-  background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold-primary) 50%, var(--gold-shine) 100%);
+/* Classes utilitaires pour les effets subtils */
+.accent-shine {
+  background: linear-gradient(135deg, var(--accent-dark) 0%, var(--accent-primary) 50%, var(--accent-light) 100%);
   background-size: 200% 200%;
-  animation: goldShine 3s ease infinite;
+  animation: accentShine 3s ease infinite;
 }
 
-@keyframes goldShine {
+@keyframes accentShine {
   0%, 100% {
     background-position: 0% 50%;
   }
@@ -71,14 +79,46 @@ body::before {
   }
 }
 
-.gold-glow {
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3),
-              0 0 40px rgba(212, 175, 55, 0.2),
-              0 0 60px rgba(212, 175, 55, 0.1);
+.accent-glow {
+  box-shadow: 0 2px 8px rgba(90, 103, 216, 0.15),
+              0 4px 16px rgba(90, 103, 216, 0.1),
+              0 8px 32px rgba(90, 103, 216, 0.05);
 }
 
-.gold-text-glow {
-  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5),
-               0 0 20px rgba(212, 175, 55, 0.3),
-               0 0 30px rgba(212, 175, 55, 0.2);
+.accent-text-glow {
+  text-shadow: 0 1px 3px rgba(90, 103, 216, 0.3);
+}
+
+/* Effet de carte subtile */
+.card-light {
+  background: var(--background-secondary);
+  border: 1px solid var(--gray-200);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05),
+              0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* Classes pour couleur secondaire orange */
+.orange-glow {
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.2),
+              0 4px 16px rgba(255, 107, 53, 0.15),
+              0 8px 32px rgba(255, 107, 53, 0.1);
+}
+
+.orange-text-glow {
+  text-shadow: 0 1px 3px rgba(255, 107, 53, 0.4);
+}
+
+.orange-shine {
+  background: linear-gradient(135deg, var(--orange-dark) 0%, var(--orange-primary) 50%, var(--orange-light) 100%);
+  background-size: 200% 200%;
+  animation: orangeShine 3s ease infinite;
+}
+
+@keyframes orangeShine {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
