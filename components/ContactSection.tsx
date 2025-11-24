@@ -81,8 +81,8 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-[#f8f9fa] via-white to-[#e9ecef]">
+      {/* Section Header */}
       <div className="container mx-auto px-6">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -106,14 +106,46 @@ export default function ContactSection() {
             Discutons de votre projet et donnons vie à vos idées
           </motion.p>
         </div>
+      </div>
 
-        {/* Contact Info Grid */}
-        <div className="max-w-4xl mx-auto mb-16">
+      {/* CTA Bandeau - Pleine largeur */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="w-full mb-16"
+      >
+        <div className="bg-[#10b981] py-8 px-6">
+          <div className="container mx-auto flex flex-col items-center justify-center gap-6 text-center">
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                Prêt à démarrer votre projet ?
+              </h3>
+              <p className="text-white/90">
+                Réponse sous 24h • Devis gratuit • Sans engagement
+              </p>
+            </div>
+            
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="bg-white text-[#10b981] px-8 py-4 font-bold text-lg hover:bg-gray-50 transition-colors flex items-center gap-3 whitespace-nowrap"
+            >
+              <MessageSquare className="w-6 h-6" />
+              Nous contacter
+            </button>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Contact Info Grid */}
+      <div className="container mx-auto px-6">
+        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             className="bg-white p-8 border border-gray-200 shadow-xl"
           >
             <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
@@ -127,7 +159,7 @@ export default function ContactSection() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                   className="flex items-center gap-4 group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#e55a2b] to-[#ff6b35] flex items-center justify-center group-hover:scale-110 transition-transform orange-glow">
@@ -151,42 +183,6 @@ export default function ContactSection() {
             </div>
           </motion.div>
         </div>
-
-        {/* CTA Section - Nous Contacter */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="relative max-w-5xl mx-auto"
-        >
-          <div className="relative bg-gradient-to-r from-white via-[#fff5f2] to-white p-12 border-2 border-[#ff6b35] shadow-2xl shadow-[#ff6b35]/20 overflow-hidden">
-            {/* Decorative elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#ff6b35]/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#ff8c5a]/10 rounded-full blur-3xl" />
-            
-            <div className="relative text-center space-y-6">
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-800">
-                Prêt à démarrer votre projet ?
-              </h3>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Contactez-nous dès maintenant pour discuter de vos besoins et obtenir un devis personnalisé
-              </p>
-              
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="bg-gradient-to-r from-[#e55a2b] via-[#ff6b35] to-[#ff8c5a] text-white px-16 py-6 font-bold text-2xl hover:shadow-2xl hover:shadow-[#ff6b35]/60 transition-all flex items-center gap-4 mx-auto orange-glow hover:scale-110 group"
-              >
-                <MessageSquare className="w-10 h-10 group-hover:rotate-12 transition-transform" />
-                Nous contacter
-              </button>
-              
-              <p className="text-sm text-gray-500 pt-4">
-                Réponse sous 24h • Devis gratuit • Sans engagement
-              </p>
-            </div>
-          </div>
-        </motion.div>
       </div>
 
       {/* Modal */}
