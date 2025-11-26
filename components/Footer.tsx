@@ -17,7 +17,7 @@ const footerLinks = {
     { name: 'E-Commerce', href: '#services' },
   ],
   company: [
-    { name: 'À propos', href: '#accueil' },
+    { name: 'À propos', href: '/a-propos' },
     { name: 'Services', href: '#services' },
     { name: 'Contact', href: '#contact' },
     { name: 'Portfolio', href: '#' },
@@ -120,10 +120,7 @@ export default function Footer() {
           <p className="text-gray-500 text-sm">
             © {currentYear} Wahaweb. Tous droits réservés.
           </p>
-          <p className="text-gray-500 text-sm flex items-center gap-2">
-            Fait avec <Heart className="w-4 h-4 text-red-500 fill-red-500" /> par
-            Wahaweb
-          </p>
+          
         </div>
       </div>
     </footer>

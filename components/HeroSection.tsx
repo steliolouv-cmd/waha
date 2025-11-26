@@ -13,7 +13,7 @@ const slides = [
     sousTexte: 'Un bon référencement, c\'est un flux constant de clients qualifiés qui vous trouvent naturellement. Nous mettons en place une stratégie SEO complète pour booster votre visibilité et générer des contacts.',
     gradient: 'from-[#B8941F] via-[#D4AF37] to-[#FFD700]',
     bgGradient: 'from-[#0a0a0a] via-[#1a1a1a] to-[#252525]',
-    bgImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80', // Analytics/SEO dashboard
+    bgImage: '/images/slider/web dev 1.jpg',
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const slides = [
     sousTexte: 'De la conception à la maintenance, nous créons des sites web professionnels qui reflètent l\'excellence de votre entreprise et transforment vos visiteurs en clients fidèles.',
     gradient: 'from-[#D4AF37] via-[#FFD700] to-[#F4E4A6]',
     bgGradient: 'from-[#0f0f0f] via-[#1a1a1a] to-[#2a2a2a]',
-    bgImage: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920&q=80', // Tropical beach workspace
+    bgImage: '/images/slider/web dev 2.jpg',
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const slides = [
     sousTexte: 'Un site internet qui ne convertit pas est un investissement perdu. Nous analysons, optimisons et transformons votre présence web en machine à générer des opportunités commerciales.',
     gradient: 'from-[#B8941F] via-[#D4AF37] to-[#FFD700]',
     bgGradient: 'from-[#1a1a1a] via-[#252525] to-[#1a1a1a]',
-    bgImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80', // Business growth charts
+    bgImage: '/images/slider/web dev 3.jpg',
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ const slides = [
     sousTexte: 'Dans un marché de plus en plus digital, votre site web est votre meilleur commercial. Nous créons des expériences en ligne qui vous démarquent de la concurrence et captivent vos clients.',
     gradient: 'from-[#FFD700] via-[#D4AF37] to-[#B8941F]',
     bgGradient: 'from-[#252525] via-[#1a1a1a] to-[#0f0f0f]',
-    bgImage: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1920&q=80', // Laptop coding tropical setting
+    bgImage: '/images/slider/web dev 4.jpg',
   },
   {
     id: 5,
@@ -53,7 +53,7 @@ const slides = [
     sousTexte: 'Sites web professionnels | SEO optimisé | Résultats mesurables',
     gradient: 'from-[#D4AF37] to-[#FFD700]',
     bgGradient: 'from-[#0a0a0a] via-[#252525] to-[#1a1a1a]',
-    bgImage: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1920&q=80', // Web development coding
+    bgImage: '/images/slider/web dev 1.jpg',
   },
 ];
 
@@ -114,7 +114,7 @@ export default function HeroSection() {
         <motion.div
           key={`bg-${currentSlide}`}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: 0.7 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 2, ease: 'easeInOut' }}
           className="absolute inset-0 z-0"
@@ -163,6 +163,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-800 max-w-5xl"
+              style={{ textShadow: '0 1px 3px rgba(255, 255, 255, 0.8), 0 2px 6px rgba(255, 255, 255, 0.5)' }}
             >
               {currentSlideData.accroche}{' '}
               <span className="bg-gradient-to-r from-[#e55a2b] via-[#ff6b35] to-[#ff8c5a] bg-clip-text text-transparent orange-text-glow">
@@ -175,7 +176,8 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-3xl leading-relaxed"
+              className="text-lg md:text-xl lg:text-2xl text-white max-w-3xl leading-relaxed"
+              style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3)' }}
             >
               {currentSlideData.sousTexte}
             </motion.p>

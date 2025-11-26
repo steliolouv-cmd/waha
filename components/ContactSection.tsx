@@ -140,48 +140,70 @@ export default function ContactSection() {
 
       {/* Contact Info Grid */}
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-white p-8 border border-gray-200 shadow-xl"
-          >
-            <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-              Nos coordonnées
-            </h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {contactInfo.map((info, index) => (
-                <motion.div
-                  key={info.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                  className="flex items-center gap-4 group"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#e55a2b] to-[#ff6b35] flex items-center justify-center group-hover:scale-110 transition-transform orange-glow">
-                    <info.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500">{info.title}</p>
-                    {info.link ? (
-                      <a
-                        href={info.link}
-                        className="text-gray-800 font-semibold hover:text-[#ff6b35] transition-colors"
-                      >
-                        {info.value}
-                      </a>
-                    ) : (
-                      <p className="text-gray-800 font-semibold">{info.value}</p>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            {/* Titre stylé à gauche */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="lg:col-span-1"
+            >
+              <div className="relative">
+                <div className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-[#e55a2b] to-[#ff6b35] rounded-full"></div>
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-800 pl-4">
+                  Nos
+                  <br />
+                  <span className="bg-gradient-to-r from-[#e55a2b] via-[#ff6b35] to-[#ff8c5a] bg-clip-text text-transparent">
+                    coordonnées
+                  </span>
+                </h3>
+                <p className="text-gray-500 mt-4 pl-4">
+                  N'hésitez pas à nous contacter pour toute question
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Coordonnées à droite */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="lg:col-span-2 bg-white rounded-2xl shadow-lg p-8"
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {contactInfo.map((info, index) => (
+                  <motion.div
+                    key={info.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                    className="flex items-center gap-4 group p-4 rounded-xl hover:bg-gray-50 transition-colors"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#e55a2b] to-[#ff6b35] flex items-center justify-center group-hover:scale-110 transition-transform orange-glow flex-shrink-0">
+                      <info.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-500 font-medium">{info.title}</p>
+                      {info.link ? (
+                        <a
+                          href={info.link}
+                          className="text-gray-800 font-semibold hover:text-[#ff6b35] transition-colors"
+                        >
+                          {info.value}
+                        </a>
+                      ) : (
+                        <p className="text-gray-800 font-semibold">{info.value}</p>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
 

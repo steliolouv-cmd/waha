@@ -154,27 +154,6 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-16"
-        >
-          <p className="text-gray-600 mb-6">
-            Vous ne trouvez pas ce que vous cherchez ?
-          </p>
-          <button
-            onClick={() => {
-              const element = document.getElementById('contact');
-              element?.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="bg-gradient-to-r from-[#e55a2b] via-[#ff6b35] to-[#ff8c5a] text-white px-8 py-4 font-semibold hover:shadow-xl hover:shadow-[#ff6b35]/50 transition-all orange-glow hover:scale-105"
-          >
-            Contactez-nous pour un projet sur mesure
-          </button>
-        </motion.div>
       </div>
 
       {/* Modal */}
@@ -259,7 +238,7 @@ export default function ServicesSection() {
                   }}
                   className="w-full mt-8 bg-gradient-to-r from-[#e55a2b] via-[#ff6b35] to-[#ff8c5a] text-white px-8 py-4 font-semibold hover:shadow-xl hover:shadow-[#ff6b35]/50 transition-all orange-glow hover:scale-105"
                 >
-                  Demander un devis
+                  Nous contacter
                 </button>
               </div>
             </motion.div>
