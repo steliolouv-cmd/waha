@@ -14,7 +14,8 @@ const contactSchema = z.object({
   subject: z.string().min(3, 'Le sujet doit contenir au moins 3 caractères'),
   message: z.string().min(10, 'Le message doit contenir au moins 10 caractères'),
 });
-
+// Téléphone
+//{icon: Phone,title: 'Téléphone',value: '+262 639 01 31 00',link: 'tel:+262639013100', },
 type ContactFormData = z.infer<typeof contactSchema>;
 
 const contactInfo = [
@@ -24,12 +25,7 @@ const contactInfo = [
     value: 'contact@wahaweb.yt',
     link: 'mailto:contact@wahaweb.yt',
   },
-  {
-    icon: Phone,
-    title: 'Téléphone',
-    value: '+262 639 01 31 00',
-    link: 'tel:+262639013100',
-  },
+ 
   {
     icon: MapPin,
     title: 'Adresse',
@@ -252,7 +248,7 @@ export default function ContactSection() {
                   type="text"
                   id="name"
                   className="w-full px-4 py-3 bg-gray-50 border border-gray-300 text-gray-800 focus:ring-2 focus:ring-[#ff6b35] focus:border-[#ff6b35] outline-none transition-all placeholder:text-gray-400"
-                  placeholder="Jean Dupont"
+                  placeholder="Abdou Mohamed"
                 />
                 {errors.name && (
                   <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
@@ -269,7 +265,7 @@ export default function ContactSection() {
                   type="email"
                   id="email"
                   className="w-full px-4 py-3 bg-gray-50 border border-gray-300 text-gray-800 focus:ring-2 focus:ring-[#ff6b35] focus:border-[#ff6b35] outline-none transition-all placeholder:text-gray-400"
-                  placeholder="jean@exemple.com"
+                  placeholder="abdou@gmail.com"
                 />
                 {errors.email && (
                   <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
@@ -286,7 +282,7 @@ export default function ContactSection() {
                   type="tel"
                   id="phone"
                   className="w-full px-4 py-3 bg-gray-50 border border-gray-300 text-gray-800 focus:ring-2 focus:ring-[#ff6b35] focus:border-[#ff6b35] outline-none transition-all placeholder:text-gray-400"
-                  placeholder="+33 1 23 45 67 89"
+                  placeholder="+269 XX XX XX XX"
                 />
               </div>
 
